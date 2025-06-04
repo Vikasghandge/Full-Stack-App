@@ -1,1 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: full-stack-app
+  labels:
+    app: full-stack-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: full-stack-app
+  template:
+    metadata:
+      labels:  # ❌ You had a typo here: "lables"
+        app: full-stack-app
+    spec:
+      containers:
+        - name: full-stack-app
+          image: ghandgevikas/full-stack:latest
+          ports:
+            - containerPort: 8080  # ❌ You had "containerPorts" and "80"
 
