@@ -8,6 +8,5 @@ spec:
     app: full-stack-app
   ports:
     - name: http
-      port: 8089        # External port
-      targetPort: 8080  # Container port (matches app)
-
+      port: 80           # Publicly exposed port
+      targetPort: 8080   # Port your app is running on inside container
